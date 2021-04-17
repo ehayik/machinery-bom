@@ -1,0 +1,5 @@
+
+rootProject.name = 'machinery-bom'
+
+includeBuild 'libs/machinery-config'
+includeBuild 'libs/machinery-web'
