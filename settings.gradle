@@ -1,5 +1,5 @@
 
 rootProject.name = 'machinery-bom'
 
-includeBuild 'libs/machinery-config'
+includeBuild 'libs/machinery-configmap'
 includeBuild 'libs/machinery-web'
