@@ -1,6 +1,3 @@
-[submodule "libs/machinery-config"]
-	path = libs/machinery-config
-	url = https://github.com/eljaiek/machinery-config.git
 [submodule "libs/machinery-web"]
 	path = libs/machinery-web
 	url = https://github.com/eljaiek/machinery-web.git
