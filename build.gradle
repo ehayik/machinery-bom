@@ -22,15 +22,15 @@ version = '0.0.1-SNAPSHOT'
 
 dependencies {
     constraints {
-        api "com.github.eljaiek.nachinery:machinery-configmap-core:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-configmap-jpa:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-configmap-redis:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-configmap-autoconfigure:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-configmap-starter:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-configmap-redis-starter:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-core:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-jpa:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-redis:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-autoconfigure:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-starter:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-configmap-redis-starter:${project.version}"
 
-        api "com.github.eljaiek.nachinery:machinery-web-starter:${project.version}"
-        api "com.github.eljaiek.nachinery:machinery-web-i8ln:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-web-starter:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-web-i8ln:${project.version}"
     }
 }
 
