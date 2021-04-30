@@ -7,6 +7,7 @@ buildscript {
 plugins {
     id 'java-platform'
     id 'maven-publish'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.2'
 }
 
 repositories {
@@ -18,7 +19,7 @@ apply plugin: 'maven-publish'
 apply from: "$rootDir/gradle/ext/publish-common.gradle"
 
 group = 'com.github.eljaiek.machinery'
-version = '0.0.1-SNAPSHOT'
+version = scmVersion.version
 
 dependencies {
     constraints {
