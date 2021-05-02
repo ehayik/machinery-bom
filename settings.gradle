@@ -1,5 +1,6 @@
 
 rootProject.name = 'machinery-bom'
 
-includeBuild 'libs/machinery-configmap'
-includeBuild 'libs/machinery-web'
+file('libs').listFiles().each { File moduleBuild ->
+    includeBuild moduleBuild
+}
