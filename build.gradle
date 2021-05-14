@@ -29,6 +29,7 @@ dependencies {
         api "com.github.eljaiek.machinery:machinery-configmap-autoconfigure:${project.version}"
         api "com.github.eljaiek.machinery:machinery-configmap-starter:${project.version}"
         api "com.github.eljaiek.machinery:machinery-configmap-redis-starter:${project.version}"
+        api "com.github.eljaiek.machinery:jackson-datatype-machinery-configmap:${project.version}"
 
         api "com.github.eljaiek.machinery:machinery-web-starter:${project.version}"
         api "com.github.eljaiek.machinery:machinery-web-i8ln:${project.version}"
