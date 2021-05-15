@@ -36,6 +36,12 @@ dependencies {
     }
 }
 
+task publishAll {
+    dependsOn gradle.includedBuilds*.task(':publishAll')
+}
+
+publishAll.dependsOn publish
+
 publishing {
     publications {
         mavenBom(MavenPublication) {
