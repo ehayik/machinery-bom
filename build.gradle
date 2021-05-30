@@ -40,7 +40,12 @@ task publishAll {
     dependsOn gradle.includedBuilds*.task(':publishAll')
 }
 
+task publishAllToMavenLocal {
+    dependsOn gradle.includedBuilds*.task(':publishAllToMavenLocal')
+}
+
 publishAll.dependsOn publish
+publishAllToMavenLocal.dependsOn publishToMavenLocal
 
 publishing {
     publications {
