@@ -15,9 +15,9 @@ def pom(it) {
     }
 
     it.scm {
-        connection = 'scm:git:git://github.com/eljaiek/machinery-bom.git'
-        developerConnection = 'scm:git:git@github.com:eljaiek/machinery-bom.git'
-        url = 'https://github.com/eljaiek/machinery-bom'
+        connection = 'scm:git:git://github.com/ehayik/toolbelt-bom-build.git'
+        developerConnection = 'scm:git:git@github.com:ehayik/toolbelt-bom-build.git'
+        url = 'https://github.com/ehayik/toolbelt-bom-build'
     }
 }
 

@@ -5,59 +5,29 @@ buildscript {
 }
 
 plugins {
-    id 'java-platform'
     id 'maven-publish'
     id 'pl.allegro.tech.build.axion-release' version '1.13.2'
 }
 
-repositories {
-    mavenCentral()
-}
+project.version = scmVersion.version
 
-apply plugin: 'java-platform'
-apply plugin: 'maven-publish'
-apply from: "$rootDir/gradle/ext/publish-common.gradle"
-
-group = 'com.github.eljaiek.machinery'
-version = scmVersion.version
-
-dependencies {
-    constraints {
-        api "com.github.eljaiek.machinery:machinery-configmap-core:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-jpa:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-redis:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-autoconfigure:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-starter-system:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-starter-jpa:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-configmap-starter-redis:${project.version}"
-        api "com.github.eljaiek.machinery:jackson-datatype-machinery-configmap:${project.version}"
-
-        api "com.github.eljaiek.machinery:machinery-web-starter:${project.version}"
-        api "com.github.eljaiek.machinery:machinery-web-i8ln:${project.version}"
+allprojects {
+    repositories {
+        mavenCentral()
     }
 }
 
-task publishAll {
+subprojects {
+    group = 'com.github.ehayik.toolbelt'
+    version = rootProject.version
+
+    apply from: "$rootDir/gradle/ext/publish-common.gradle"
+}
+
+task publishAllIncludedBuilds {
     dependsOn gradle.includedBuilds*.task(':publishAll')
 }
 
-task publishAllToMavenLocal {
+task publishAllIncludedBuildsToMavenLocal {
     dependsOn gradle.includedBuilds*.task(':publishAllToMavenLocal')
-}
-
-publishAll.dependsOn publish
-publishAllToMavenLocal.dependsOn publishToMavenLocal
-
-publishing {
-    publications {
-        mavenBom(MavenPublication) {
-            from components.javaPlatform
-
-            pom { x -> pom(x)}
-        }
-    }
-
-    repositories {
-        maven { x -> nexusRepository(x) }
-    }
 }

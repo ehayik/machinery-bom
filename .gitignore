@@ -5,3 +5,5 @@
 build
 
 .idea
+/toolbelt-bom-tests/target/
+/toolbelt-bom-tests/.mvn/wrapper/maven-wrapper.jar

@@ -1,0 +1,43 @@
+
+plugins {
+    id 'java-platform'
+}
+
+apply plugin: 'maven-publish'
+apply plugin: 'java-platform'
+
+javaPlatform {
+    allowDependencies()
+}
+
+dependencies {
+    api platform("org.springframework.boot:spring-boot-dependencies:${springBoot}")
+
+    constraints {
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-core:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-sources-jpa:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-sources-redis:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-autoconfigure:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-starter-system:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-starter-jpa:${project.version}"
+        api "com.github.ehayik.toolbelt:toolbelt-configmap-starter-redis:${project.version}"
+        api "com.github.ehayik.toolbelt:jackson-datatype-toolbelt-configmap:${project.version}"
+
+        api "com.github.eljaiek.machinery:machinery-web-starter:${project.version}"
+        api "com.github.eljaiek.machinery:machinery-web-i8ln:${project.version}"
+    }
+}
+
+publishing {
+    publications {
+        mavenBom(MavenPublication) {
+            from components.javaPlatform
+
+            pom { x -> pom(x) }
+        }
+    }
+
+    repositories {
+        maven { x -> nexusRepository(x) }
+    }
+}

@@ -1,0 +1,86 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.ehayik.toolbelt</groupId>
+    <artifactId>toolbelt-bom-tests</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <revision>0.1.0-SNAPSHOT</revision>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-starter-system</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-starter-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-sources-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-starter-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>toolbelt-configmap-sources-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ehayik.toolbelt</groupId>
+            <artifactId>jackson-datatype-toolbelt-configmap</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.eljaiek.machinery</groupId>
+            <artifactId>machinery-web-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.eljaiek.machinery</groupId>
+            <artifactId>machinery-web-i8ln</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--includes spring-boot-dependencies-->
+            <dependency>
+                <groupId>com.github.ehayik.toolbelt</groupId>
+                <artifactId>toolbelt-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
