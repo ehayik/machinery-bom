@@ -1,0 +1,24 @@
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'java'
+
+dependencies {
+    implementation platform(project(':toolbelt-bom'))
+
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-core'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-sources-jpa'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-sources-redis'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-autoconfigure'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-starter-system'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-starter-jpa'
+    implementation 'com.github.ehayik.toolbelt:toolbelt-configmap-starter-redis'
+    implementation 'com.github.ehayik.toolbelt:jackson-datatype-toolbelt-configmap'
+
+    implementation 'com.github.eljaiek.machinery:machinery-web-starter'
+    implementation 'com.github.eljaiek.machinery:machinery-web-i8ln'
+}
+
+tasks.withType(PublishToMavenRepository).configureEach { it.enabled = false }

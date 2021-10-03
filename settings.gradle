@@ -1,5 +1,8 @@
 
-rootProject.name = 'machinery-bom'
+rootProject.name = 'toolbelt-bom-build'
+
+include 'toolbelt-bom'
+include 'toolbelt-bom-tests'
 
 file('libs').listFiles().each { File moduleBuild ->
     includeBuild moduleBuild
